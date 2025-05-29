@@ -3,7 +3,7 @@ import './styles/App.css'
 import Header from "./components/Header.jsx"
 import Content from "./components/Content.jsx"
 
-function App() {
+export default function App() {
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
   const [characters, setCharacters] = useState([])
@@ -13,16 +13,19 @@ function App() {
   const [error, setError] = useState(null)
   const hasFetched = useRef(false)
 
+  function resetGame() {
+    setGameOver(false)
+    setScore(0)
+    setId([])
+  }
 
   function handleClick(characterId) {
-    console.log(characterId)
-    console.log(gameOver)
     if (id.includes(characterId)) {
       setGameOver(true)
       return
     }
 
-    setScore(prevScore => prevScore + 1)
+    setScore(score => score + 1)
     setId(id => [...id, characterId])
   }
 
@@ -91,35 +94,17 @@ function App() {
       {gameOver ? (
           <div className="gameover">
             <p>Game Over</p>
-            <button type="button" 
-            onClick={() => 
-              {
-                setGameOver(false)
-                setScore(0)
-                setId([])
-              }}
-              
-              >Play Again</button>
+            <button type="button" onClick={resetGame}>Play Again</button>
           </div>
         ) : score === 9 ? (
 
-            <div className="won">
-              <p>You won!</p>
-              <button type="button" 
-              onClick={() => 
-                {
-                  setGameOver(false)
-                  setScore(0)
-                  setId([])
-                }}
-                
-                >Play Again</button>
+          <div className="won">
+            <p>You won!</p>
+            <button type="button" onClick={resetGame}>Play Again</button>
           </div>
         ) : (
-          <Content characters={characters} onClick={handleClick} />
+          <Content characters={characters} onClick={handleClick} score={score} />
       )}
     </>
   )
 }
-
-export default App
