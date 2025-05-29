@@ -1,6 +1,8 @@
 .header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header > h1 {
@@ -17,4 +19,5 @@
 
 .scores > p {
     font-size: 30px;
+    margin-top: 0;
 }

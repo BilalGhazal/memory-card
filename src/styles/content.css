@@ -1,0 +1,27 @@
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.character:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: inset;
+}
+
+.character > img {
+    width: 300px;
+    height: 300px;
+}
+
+.character > p {
+    font-size: 30px;
+}
