@@ -1,18 +1,18 @@
-.gameover {
+.gameover, .won {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.gameover > p {
+.gameover > p, .won > p {
   font-size: 50px;
 }
 
-.gameover > button {
+.gameover > button, .won > button {
   font-size: 25px;
 }
 
-.gameover > button:hover {
+.gameover > button:hover, .won > button:hover {
   cursor: pointer;
 }

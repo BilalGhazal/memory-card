@@ -101,6 +101,20 @@ function App() {
               
               >Play Again</button>
           </div>
+        ) : score === 9 ? (
+
+            <div className="won">
+              <p>You won!</p>
+              <button type="button" 
+              onClick={() => 
+                {
+                  setGameOver(false)
+                  setScore(0)
+                  setId([])
+                }}
+                
+                >Play Again</button>
+          </div>
         ) : (
           <Content characters={characters} onClick={handleClick} />
       )}
