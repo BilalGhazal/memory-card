@@ -1,9 +1,17 @@
+import "../styles/content.css"
 
 
-
-export default function Main() {
+export default function Content({characters, onClick}) {
     return (
-        <div className="main">
+        <div className="content">
+            {characters.map(dataObj => {
+                return (
+                    <div className="character" key={dataObj.id} onClick={() => onClick(dataObj.id)}>
+                        <img src={dataObj.image} />
+                        <p>{dataObj.name}</p>
+                    </div>
+                )
+            })}
         </div>
     )
 }

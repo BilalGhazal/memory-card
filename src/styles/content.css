@@ -1,6 +1,7 @@
 .content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     row-gap: 50px;
 }
 
@@ -9,12 +10,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: fit-content;
 }
 
 .character:hover {
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: inset;
+    box-shadow: 0px 0px 33px 5px #222f5b;
 }
 
 .character > img {

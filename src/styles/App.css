@@ -1,0 +1,18 @@
+.gameover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameover > p {
+  font-size: 50px;
+}
+
+.gameover > button {
+  font-size: 25px;
+}
+
+.gameover > button:hover {
+  cursor: pointer;
+}
