@@ -91,7 +91,15 @@ export default function App() {
     <>
       <Header score={score} bestScore={bestScore} />
 
-      {gameOver ? (
+      {loading ? (
+        <div className="loading">
+          <p>Loading...</p>
+        </div>
+      ) : error ? (
+          <div className="error">
+            <p>Error: {error}</p>
+          </div>
+      ) : gameOver ? (
           <div className="gameover">
             <p>Game Over</p>
             <button type="button" onClick={resetGame}>Play Again</button>

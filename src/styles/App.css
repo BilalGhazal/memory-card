@@ -1,11 +1,11 @@
-.gameover, .won {
+.gameover, .won, .loading, .error {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.gameover > p, .won > p {
+.gameover > p, .won > p, .loading > p, .error > p {
   font-size: 50px;
 }
 
